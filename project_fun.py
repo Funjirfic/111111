@@ -74,7 +74,7 @@ def CNY():
     return price
 
 
-def GBR():
+def GBP():
     link = 'https://www.banki.ru/products/currency/cb/'
     responce = requests.get(link).text
     soup = BeautifulSoup(responce, 'lxml')
