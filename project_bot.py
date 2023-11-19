@@ -4,7 +4,7 @@ from project_fun import *
 from project_text import *
 import time
 
-bot = Bot(token='6156201703:AAFbJVvYks4EfX3UiyoIcdioHIfz6JUILQw', parse_mode='HTML')
+bot = Bot(token='6156201703:AAFbJVvYks4EfX3UiyoIcdioHIfz6JUILQw')
 dp = Dispatcher(bot)
 
 ikb1 = InlineKeyboardMarkup(row_width=2)
@@ -33,8 +33,8 @@ ii7 = InlineKeyboardButton(text='INR🇮🇳',
                            callback_data='INRp')
 ii8 = InlineKeyboardButton(text='CNY🇨🇳',
                            callback_data='CNYp')
-ii9 = InlineKeyboardButton(text='GBR🇬🇧',
-                           callback_data='GBRp')
+ii9 = InlineKeyboardButton(text='GBP🇬🇧',
+                           callback_data='GBPp')
 ii10 = InlineKeyboardButton(text='JPY🇯🇵',
                             callback_data='JPYp')
 ikb2.add(ii1, ii2, ii3, ii4, ii5, ii6, ii7, ii8, ii9, ii10)
@@ -86,8 +86,8 @@ async def process_callback_parse(callback_query: types.CallbackQuery):
     await callback_query.answer()
     message_to_delete = await callback_query.message.answer('Загрузка...')
     time.sleep(1)
+    await callback_query.message.answer(f'Доллар США\nЕдиниц: 1\nКурс ЦБ РФ: {USD()}')
     await message_to_delete.delete()
-    await callback_query.message.answer(f'Единиц: 1\nКурс ЦБ РФ: {USD()}')
 
 
 @dp.callback_query_handler(text='EURp')
@@ -95,8 +95,8 @@ async def process_callback_parse(callback_query: types.CallbackQuery):
     await callback_query.answer()
     message_to_delete = await callback_query.message.answer('Загрузка...')
     time.sleep(1)
+    await callback_query.message.answer(f'Евро\nЕдиниц: 1\nКурс ЦБ РФ: {EUR()}')
     await message_to_delete.delete()
-    await callback_query.message.answer(f'Единиц: 1\nКурс ЦБ РФ: {EUR()}')
 
 
 @dp.callback_query_handler(text='BRLp')
@@ -104,8 +104,8 @@ async def process_callback_parse(callback_query: types.CallbackQuery):
     await callback_query.answer()
     message_to_delete = await callback_query.message.answer('Загрузка...')
     time.sleep(1)
+    await callback_query.message.answer(f'Бразильский реал\nЕдиниц: 1\nКурс ЦБ РФ: {BRL()}')
     await message_to_delete.delete()
-    await callback_query.message.answer(f'Единиц: 1\nКурс ЦБ РФ: {BRL()}')
 
 
 @dp.callback_query_handler(text='KRWp')
@@ -113,8 +113,8 @@ async def process_callback_parse(callback_query: types.CallbackQuery):
     await callback_query.answer()
     message_to_delete = await callback_query.message.answer('Загрузка...')
     time.sleep(1)
+    await callback_query.message.answer(f'Вона Республики Корея\nЕдиниц: 1000\nКурс ЦБ РФ: {KRW()}')
     await message_to_delete.delete()
-    await callback_query.message.answer(f'Единиц: 1000\nКурс ЦБ РФ: {KRW()}')
 
 
 @dp.callback_query_handler(text='HKDp')
@@ -122,8 +122,8 @@ async def process_callback_parse(callback_query: types.CallbackQuery):
     await callback_query.answer()
     message_to_delete = await callback_query.message.answer('Загрузка...')
     time.sleep(1)
+    await callback_query.message.answer(f'Гонконгский доллар\nЕдиниц: 1\nКурс ЦБ РФ: {HKD()}')
     await message_to_delete.delete()
-    await callback_query.message.answer(f'Единиц: 1\nКурс ЦБ РФ: {HKD()}')
 
 
 @dp.callback_query_handler(text='AEDp')
@@ -131,8 +131,8 @@ async def process_callback_parse(callback_query: types.CallbackQuery):
     await callback_query.answer()
     message_to_delete = await callback_query.message.answer('Загрузка...')
     time.sleep(1)
+    await callback_query.message.answer(f'Дирхам (ОАЭ)\nЕдиниц: 1\nКурс ЦБ РФ: {AED()}')
     await message_to_delete.delete()
-    await callback_query.message.answer(f'Единиц: 1\nКурс ЦБ РФ: {AED()}')
 
 
 @dp.callback_query_handler(text='INRp')
@@ -140,8 +140,8 @@ async def process_callback_parse(callback_query: types.CallbackQuery):
     await callback_query.answer()
     message_to_delete = await callback_query.message.answer('Загрузка...')
     time.sleep(1)
+    await callback_query.message.answer(f'Индийская рупия\nЕдиниц: 10\nКурс ЦБ РФ: {INR()}')
     await message_to_delete.delete()
-    await callback_query.message.answer(f'Единиц: 10\nКурс ЦБ РФ: {INR()}')
 
 
 @dp.callback_query_handler(text='CNYp')
@@ -149,17 +149,17 @@ async def process_callback_parse(callback_query: types.CallbackQuery):
     await callback_query.answer()
     message_to_delete = await callback_query.message.answer('Загрузка...')
     time.sleep(1)
+    await callback_query.message.answer(f'Китайский юань\nЕдиниц: 1\nКурс ЦБ РФ: {CNY()}')
     await message_to_delete.delete()
-    await callback_query.message.answer(f'Единиц: 1\nКурс ЦБ РФ: {CNY()}')
 
 
-@dp.callback_query_handler(text='GBRp')
+@dp.callback_query_handler(text='GBPp')
 async def process_callback_parse(callback_query: types.CallbackQuery):
     await callback_query.answer()
     message_to_delete = await callback_query.message.answer('Загрузка...')
     time.sleep(1)
+    await callback_query.message.answer(f'Фунт стерлингов Соединенного королевства\nЕдиниц: 1\nКурс ЦБ РФ: {GBP()}')
     await message_to_delete.delete()
-    await callback_query.message.answer(f'Единиц: 1\nКурс ЦБ РФ: {GBR()}')
 
 
 @dp.callback_query_handler(text='JPYp')
@@ -167,8 +167,8 @@ async def process_callback_parse(callback_query: types.CallbackQuery):
     await callback_query.answer()
     message_to_delete = await callback_query.message.answer('Загрузка...')
     time.sleep(1)
+    await callback_query.message.answer(f'Японская иена\nЕдиниц: 100\nКурс ЦБ РФ: {JPY()}')
     await message_to_delete.delete()
-    await callback_query.message.answer(f'Единиц: 100\nКурс ЦБ РФ: {JPY()}')
 
 
 if __name__ == '__main__':
